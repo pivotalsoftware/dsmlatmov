@@ -1,0 +1,6 @@
+include *.md
+include *.txt
+include *.py
+include latmov/user.cred
+recursive-include latmov/templates *
+recursive-include latmov/static *
