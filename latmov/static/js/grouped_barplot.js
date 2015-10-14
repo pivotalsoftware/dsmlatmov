@@ -46,13 +46,18 @@ var svg = d3.select("#anomaliestable").append("svg")
 
   x0.domain(data.map(function(d) { return d.account_name; }));
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })+100]);
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-      //.text("accounts");
+      .call(xAxis)
+     .append("text")
+        //.attr("transform", "translate(" + (width) + " ," + (height) + ")")
+        .attr("x", width/2 )
+        .attr("y",  height+margin.bottom-5)
+        .style("text-anchor", "middle")
+        .text("users");
 
   svg.append("g")
       .attr("class", "y axis")

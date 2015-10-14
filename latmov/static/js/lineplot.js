@@ -9,8 +9,10 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
 
 var parseDate = d3.time.format("%d-%b-%y").parse;
 
-var x = d3.time.scale()
-    .range([0, width]);
+//var x = d3.time.scale()
+//    .range([0, width]);
+var x =d3.scale.linear()
+       .range([0,width]);
 
 var y = d3.scale.linear()
     .range([height, 0]);
@@ -52,8 +54,14 @@ var svg = d3.select("#accdivid").append("svg")
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
+      .call(xAxis)
+      .append("text")
+        //.attr("transform", "translate(" + (width) + " ," + (height) + ")")
+        .attr("x", width / 2 )
+        .attr("y",  height + margin.bottom-5)
+        .style("text-anchor", "middle")
+        .text("week id");
+      
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
