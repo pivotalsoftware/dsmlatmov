@@ -53,14 +53,14 @@ Pushing the app to PCF
 
 1. Push the app to your PCF instance (assuming you've set one up)
 ```
-dsmiot [master●●] cf push predimcf  -b git://github.com/ihuston/python-conda-buildpack.git -c "bash deploy" -t 180     
+dsmiot [master●●] cf push latmovcf  -f manifest.yml     
 ```
 2. Create User Provided Service for database credentials (first time only)
 ```
-dsmiot [master●●] cf cups predimcreds -p '{"host":"<HOST>","user":"<USER>","password":"<PASSWORD>", "databasename":"<DATABASE>", "port":"<PORT>" }'
+dsmiot [master●●] cf cups latmovcreds -p '{"host":"<HOST>","user":"<USER>","password":"<PASSWORD>", "database":"<DATABASE>", "port":"<PORT>" }'
 ```
 3. Bind the User Provided Service to the app (first time only)
 ```
-dsmiot [master●●] cf bind-service predimcf predimcreds
+dsmiot [master●●] cf bind-service latmovcf latmovcreds
 ```
-The app should now be accessible on your PCF instance. In our case, at http://predimcf.pcf1-sc.vchs.pivotal.io/
+The app should now be accessible on your PCF instance. In our case, at [https://latmovcf.pcf1-rdu.nasa.pivotal.io/](https://latmovcf.pcf1-rdu.nasa.pivotal.io/)
