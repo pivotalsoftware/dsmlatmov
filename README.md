@@ -1,6 +1,8 @@
 Live Demo
 ==========
 
+![Lateral movement demo](https://github.com/pivotalsoftware/dsmlatmov/raw/gh-pages/img/dsmlatmov_1080p.gif)
+
 The app can be accessed at [https://latmovcf.pcf1-rdu.nasa.pivotal.io/](https://latmovcf.pcf1-rdu.nasa.pivotal.io/)
 
 Pre-requisites
